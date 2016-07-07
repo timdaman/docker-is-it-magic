@@ -1,0 +1,5 @@
+FROM mysql
+ENV MYSQL_ROOT_PASSWORD=secret
+ENV MYSQL_DATABASE=wordpress
+ENV MYSQL_USER=wordpress
+ENV MYSQL_PASSWORD=wordpress_secret

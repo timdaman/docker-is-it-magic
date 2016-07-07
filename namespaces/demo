@@ -1,0 +1,4 @@
+#!/bin/sh
+
+top
+sudo newpid top

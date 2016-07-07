@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo 'sudo mkdir /sys/fs/cgroup/cpu/limit-cpu'
+sudo mkdir /sys/fs/cgroup/cpu/limit-cpu
+echo 'echo 5000 | sudo tee /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_quota_us'
+echo 5000 | sudo tee /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_quota_us
+echo 'cat /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_quota_us'
+cat /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_quota_us 
+echo 'cat /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_period_us'
+cat /sys/fs/cgroup/cpu/limit-cpu/cpu.cfs_period_us 

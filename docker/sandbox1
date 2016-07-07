@@ -1,0 +1,6 @@
+# Download ther "base os" image
+#docker pull ubuntu
+
+# Login
+docker run --rm -it ubuntu /bin/bash
+

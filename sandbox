@@ -1,0 +1,7 @@
+# Download ther "base os" image
+sudo docker pull ubuntu
+
+# Login
+docker run -it ubuntu /bin/bash
+
+#don't for get to clean up with container when you are done with it

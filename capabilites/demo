@@ -1,0 +1,46 @@
+#!/bin/sh
+
+echo '          Permissions before'
+echo '# ls -l /bin/ping'
+ls -l /bin/ping
+line
+
+echo '           Show ping working'
+echo '# ping -c 1 localhost'
+ping -c 1 localhost
+line
+
+echo '            Remove SUID'
+echo '# sudo chmod u-s /bin/ping'
+sudo chmod u-s /bin/ping
+echo '# ls -l /bin/ping'
+ls -l /bin/ping
+line
+
+echo '            Ping is now broken!'
+echo '# ping -c 1 localhost'
+ping -c 1 localhost
+line
+
+echo '            Unless you are root'
+echo '# sudo ping -c 1 localhost'
+sudo ping -c 1 localhost
+line
+
+echo '            Add raw network permissions'
+echo '# getcap /bin/ping'
+getcap /bin/ping
+echo '# sudo setcap cap_net_raw+p /bin/ping'
+sudo setcap cap_net_raw+p /bin/ping
+echo '# getcap /bin/ping'
+getcap /bin/ping
+line
+
+echo '            Show ping working again'
+echo '# ping -c 1 localhost'
+ping -c 1 localhost
+line
+
+# Clean up
+sudo setcap -r /bin/ping
+sudo chmod u+s /bin/ping

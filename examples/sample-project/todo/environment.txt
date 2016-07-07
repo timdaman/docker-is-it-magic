@@ -1,0 +1,6 @@
+MYSQL_ROOT_PASSWORD=root_secret
+MYSQL_DATABASE=todo
+MYSQL_USER=todo_user
+MYSQL_PASSWORD=todo_secret
+MYSQL_HOST=db
+ENVIRONMENT=production

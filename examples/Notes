@@ -1,0 +1,26 @@
+# Did a lot of caching to make these examples fast
+
+cat /etc/lsb-release
+
+docker run -ti --rm ubuntu:16.04 bash
+cat /etc/lsb-release
+
+docker run -ti --rm centos bash
+cat /etc/lsb-release
+rm -rf /bin
+
+docker run --name stress-container -d stress
+docker rm -f stress-container
+
+docker run --name stress-container -d --cpu-period=100000 --cpu-quota=5000 stress
+
+docker run --name website -d -p 800:80  -v "$PWD/htdocs":/usr/local/apache2/htdocs/:ro httpd
+
+https://docs.docker.com/engine/reference/run/
+
+docker exec -ti website bash
+
+https://hub.docker.com/
+
+docker-compose up -d
+

@@ -1,0 +1,18 @@
+mkdir /tmp/dir1
+mkdir /tmp/dir2
+mkdir /tmp/mnt
+
+echo dir1 > /tmp/dir1/file1
+echo dir1 > /tmp/dir1/file12
+
+echo dir2 > /tmp/dir2/file2
+echo dir2 > /tmp/dir2/file12
+
+sudo mount -t aufs -o br=/tmp/dir1:/tmp/dir2 none /tmp/mnt
+
+echo "DEMO"
+bash
+
+echo "CLEANUP"
+sudo umount /tmp/mnt
+sudo rm -rf /tmp/mnt /tmp/dir1 /tmp/dir2

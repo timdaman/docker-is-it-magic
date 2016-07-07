@@ -1,0 +1,3 @@
+[submodule "examples/sample-project/todo/app/todo-sample-app-master"]
+	path = examples/sample-project/todo/app/todo-sample-app-master
+	url = https://github.com/awslabs/todo-sample-app.git

@@ -1,0 +1,32 @@
+---
+version: '2'
+services:
+  app:
+    build: app
+    hostname: app
+    restart: always
+    env_file: environment.txt
+    ports:
+      - "80:3000"
+    restart: always
+    networks:
+      - private
+
+  db:
+    image: mysql:5.7.11
+    restart: always
+    env_file: environment.txt
+    volumes:
+      - mysql:/var/lib/mysql
+    # ports:
+    #     - '127.0.0.1:5432:5432'
+    networks:
+        - private
+
+volumes:
+  mysql:
+    driver: local
+
+networks:
+  private:
+    driver: bridge

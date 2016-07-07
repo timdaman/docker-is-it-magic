@@ -1,0 +1,9 @@
+# Download ther "base os" image
+#docker pull ubuntu
+
+# Login
+docker run \
+  --name ubuntu-stress-backup \
+  --hostname ubuntu-stress \
+  -m 100m \
+  -it ubuntu /bin/bash

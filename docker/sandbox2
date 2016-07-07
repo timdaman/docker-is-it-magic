@@ -1,0 +1,9 @@
+# Download ther "base os" image
+#docker pull ubuntu
+
+# Login
+docker run \
+  --rm \
+  -v /home/tim/Documents/KWLUG\ Talks/Docker/docker:/mnt:ro \
+  -it ubuntu /bin/bash
+

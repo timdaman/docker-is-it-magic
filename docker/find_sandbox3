@@ -1,0 +1,1 @@
+sudo find /var/lib/docker -type d -name "`docker images --no-trunc | awk '/ubuntu-stress-backup/ {print $3}'`" -exec du -sh {} \;
